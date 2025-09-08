@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    color: #333;
+    scroll-behavior: smooth;
+}
+header{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 9%;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    z-index: 99;
+    box-shadow: 1px 1px 10px 2px lightblue;
+}
+.logo{
+    font-size: 25px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+#cart-icon{
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    font-size: 30px;
+}
+#cart-icon .cart-item-count{
+    position: absolute;
+    top: 0;
+    right: -2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    background-color: orangered;
+    display: flex;
+    visibility: hidden;
+}
+.shop{
+    padding: 100px 9% 30px;
+}
+.section-title{
+    font-size: 25px;
+    text-align: center;
+    margin-top: 15px;
+}
+.product-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 30px;
+}
+.product-img{
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.product-img img{
+    width: 100%;
+    transition: 0.5s;
+}
+.product-img img:hover{
+    transform: scale(1.1);
+}
+.product-title{
+    font-size: 20px;
+    margin-top: 10px;
+}
+.price-and-cart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.price-and-cart .price{
+    font-size: 18px;
+    font-weight: 500;
+}
+.price-and-cart .add-cart{
+    padding: 10px;
+    background-color: orangered;
+    border-radius: 6px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+.cart{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 360px;
+    height: 100%;
+    background: #fff;
+    padding: 65px 20px 40px;
+    z-index: 100;
+    overflow: auto;
+    transition: 0.5s;
+}
+.cart.active{
+    right: 0; 
+}
+.cart-title{
+    font-size: 30px;
+    text-align: center;
+}
+.cart-box{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+.cart-box img{
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+.cart-detail{
+    display: grid;
+    margin-right: auto;
+    gap: 8px;
+}
+.cart-detail .cart-product-title{
+    font-size: 16px;
+    line-height: 1;
+}
+.cart-price{
+    font-weight: 500px;
+}
+.cart-quantity{
+    display: flex;
+    border: 1px solid #999;
+    border-radius: 6px;
+    width: 100px;
+}
+.cart-quantity button{
+    background:transparent;
+    width: 30px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+.cart-quantity #decrement{
+    color: #999;
+}
+.cart-quantity .number{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+    cursor: default;
+}
+.cart-remove{
+    font-size: 25px;
+    cursor: pointer;
+}
+.total{
+    display: flex;
+    font-size: 18px;
+    margin-top: 20px;
+    border-top: 1px solid #999;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+.total-price{
+    margin-left: 10px;
+    font-weight: 600;
+}
+.btn-buy{
+    display: block;
+    padding: 5px 10px;
+    border: none;
+    background: orangered;
+    font-size: 16px;
+    border-radius: 6px;
+    color: #fff;
+    margin: 20px auto 0;
+    cursor: pointer;
+
+}
+#cart-close{
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+@media screen and (max-width:360px){
+    .product-content{
+        grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    }
+    .cart{
+        width: 100%;
+    }
+}
